@@ -1,0 +1,16 @@
+{
+  "name": "xlogger",
+  "version": "1.0.0",
+  "description": "A Simple Cross Platform Logging Program",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jimmy Brant",
+  "license": "ISC",
+  "devDependencies": {
+    "canvas": "^2.9.0",
+    "electron": "^16.0.7"
+  }
+}
