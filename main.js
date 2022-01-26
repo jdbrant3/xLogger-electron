@@ -5,7 +5,7 @@ const fs = require("fs")
 
 function createWindow () {
     const mainWindow = new BrowserWindow({
-        width: 1024,
+        width: 1500,
         height: 850,
         show: false,
         backgroundColor: '#F0FFFF',

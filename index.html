@@ -18,7 +18,7 @@
   <body>
     <style>
       body { text-align: center; }
-      #info { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+      /* #info { display: grid; grid-template-columns: 1fr 1fr 1fr; } */
     </style>
     <h1>Will it Work This Time????</h1>
     <script type="text/javascript"
@@ -42,7 +42,9 @@
                                     showRoller: true,
                                     valueRange: [0.0, 1.2],
                                     showRangeSelector: true,
-                                    labels: ['Time', 'Random']
+                                    labels: ['Time', 'Random'],
+                                    width: 1500,
+                                    height: 500
                                 });
             // It sucks that these things aren't objects, and we need to store state in window.
             window.intervalId = setInterval(function() {
