@@ -1,11 +1,56 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta charset='UTF-8'>
         <title>Jimmy xLogger Magic</title>
     </head>
     <body>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="plot.js"></script>
+        
+        <div id="chartContainer">
+            <canvas></canvas id="testCanvas" width="550" height="450">
+        </div>
+
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <style>
+      body { text-align: center; }
+      #info { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    </style>
+    <h1>Will it Work This Time????</h1>
+    <script type="text/javascript"
+        src="dygraph.min.js"></script>
+        <link rel="stylesheet" src="dygraph.css" />
+        </head>
+        <body>
+        <div id="graphdiv"></div>
+        <script type="text/javascript">
+            var data = [];
+            var t = new Date();
+            const refreshTime = 1000
+            for (var i = 10; i >= 0; i--) {
+                var x = new Date(t.getTime() - i * refreshTime);
+                data.push([x, Math.random()]);
+            }
+
+            var g = new Dygraph(document.getElementById("graphdiv"), data,
+                                {
+                                    drawPoints: true,
+                                    showRoller: true,
+                                    valueRange: [0.0, 1.2],
+                                    showRangeSelector: true,
+                                    labels: ['Time', 'Random']
+                                });
+            // It sucks that these things aren't objects, and we need to store state in window.
+            window.intervalId = setInterval(function() {
+                var x = new Date();  // current time
+                var y = Math.random();
+                data.push([x, y]);
+                g.updateOptions( { 'file': data } );
+            }, refreshTime);
+        </script>
+  </body>
 </html>

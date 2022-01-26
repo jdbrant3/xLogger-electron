@@ -1,5 +1,5 @@
 {
-  "name": "xlogger",
+  "name": "electron-test",
   "version": "1.0.0",
   "description": "A Simple Cross Platform Logging Program",
   "main": "main.js",
@@ -10,7 +10,9 @@
   "author": "Jimmy Brant",
   "license": "ISC",
   "devDependencies": {
-    "canvas": "^2.9.0",
-    "electron": "^16.0.7"
+    "chart.js": "^3.7.0",
+    "d3": "^7.3.0",
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.5"
   }
 }

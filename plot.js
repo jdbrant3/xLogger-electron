@@ -4,7 +4,8 @@
 
 // var Chart = require('canvasjs.min.js')
 
-const { Chart } = require('canvasjs.min')
+// const { Chart } = require('canvasjs.min')
+
 
 window.onload = function () {
 var chart = new Chart("chartContainer", {

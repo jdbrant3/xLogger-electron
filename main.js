@@ -1,11 +1,20 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require("path")
+const fs = require("fs")
+
 
 function createWindow () {
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1024,
+        height: 850,
         show: false,
-        backgroundColor: '#ffff00'
+        backgroundColor: '#F0FFFF',
+        webPreferences: {
+            nodeIntegration: false, 
+            contextIsolation: true,
+            enableRemoteModules: false,
+            preload: path.join(__dirname, "preload.js")
+        }
     })
 
     // If we ever want a second window this is how you render another window
@@ -15,12 +24,17 @@ function createWindow () {
     // })
 
     mainWindow.loadFile('index.html')
+    //Uncomment to Rick Roll
+    // mainWindow.loadURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
     // secWindow.loadURL('https://www.labjack.com/')
 
     // Delays the app window display until all elements are rendered
     // the "once" ensures it only executes once
     mainWindow.once('ready-to-show', mainWindow.show)
+
+    // Open the DevTools.
+    mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow)
