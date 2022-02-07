@@ -10,8 +10,6 @@
   "author": "Jimmy Brant",
   "license": "ISC",
   "devDependencies": {
-    "chart.js": "^3.7.0",
-    "d3": "^7.3.0",
     "electron": "^16.0.7",
     "electron-builder": "^22.14.5"
   }
